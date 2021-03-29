@@ -1,0 +1,523 @@
+:root {
+  --primary-color: #A49393;
+  --secondary-color: #EED6D3;
+  --tertiary-color: #67595E;
+  --quaternary-color: #A49393;
+  --hover-color: #E8B4B8;
+  --shadow-color:rgba(121, 122, 122, 0.4);
+  /* --font-style: 'Questrial'; */
+  color: antiquewhite;
+}
+
+body {
+  font-family: 'Ranchers', cursive;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("image/bg-blur.png");
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;  
+  /* background-size: cover; */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: antiquewhite;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+.mt31 {
+  margin-top: 30px;
+}
+
+.heading{
+  background: #67595E;
+  background-position: center;
+  /* width: 100%; */
+}
+.header {
+  padding: 2%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.settings {
+
+  z-index: 1;
+}
+
+.final {
+  visibility: hidden;
+  z-index: 2;
+}
+
+.final p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.final h4 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.quiz  {
+  visibility: hidden;
+  z-index: 0;
+}
+
+#questions {
+  font-size: 18px;
+  font-family: 'Ranchers', cursive;
+  font-weight: 600;
+  line-height: 1.3;
+  color: white;
+  background-color: var(--primary-color);
+  appearance: none;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  /* margin-left: 30px; */
+  outline: none;
+  text-align: center;
+  width: 120px;
+}
+.settings select {
+  font-size: 18px;
+  font-family: 'Ranchers', cursive;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: white;
+  background-color: var(--primary-color);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 20px;
+  outline: none;
+  text-align: center;
+}
+
+.settings select::-ms-expand {
+  display: none;
+}
+
+.settings select:hover {
+  border-color: var(--hover-color);
+}
+
+.settings select:focus {
+  border-color: var(--hover-color);
+}
+
+.settings select option {
+  /* font-weight: bolder; */
+  font-family: 'Ranchers', cursive;
+}
+
+.settings label {
+  font-size: 20px;
+  margin-right: 16px;
+}
+
+
+.quiz, .settings, .final {
+  position: absolute;
+  padding: 0px 35px 35px 35px;
+  max-width: 50%;
+  background-color: var(--tertiary-color);
+  border-radius: 9px;
+  -webkit-box-shadow: 5px 5px 8px #888888;
+  -moz-box-shadow: 10px 10px 3px -4px #888888;
+  box-shadow: 10px 10px 10px 5px #888888;
+}
+
+h3 {
+  display: block;
+  /* width: 550px; */
+  font-size: 25px;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.submit {
+  width: 100%;
+  color: white;
+  background-color: var(--primary-color);
+  font-family: 'Ranchers', cursive;
+  outline: none;
+  border: none;
+  height: 50px;
+  font-size: 1.8rem;
+  margin-top: 20px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+}
+
+.submit:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+  color: white;
+}
+
+/* The container */
+.count {
+  display: block;
+  left: 75%;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.count p {
+  position: absolute;
+  font-size: 25px;
+  
+}
+
+.slash {
+  margin-left: 28px;
+}
+
+.total {
+  margin-left: 50px;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #E8B4B8;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #E8B4B8;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 1200px){
+  .header {
+    text-align: center;
+    padding-right: 63px;
+  }
+  .heading {
+    background-position: center;
+  }
+  .quiz {
+    box-align: center;
+  }
+
+}
+
+@media (max-width: 1025px){
+  .header {
+    text-align: center;
+    padding-right: 94px;
+}
+  .heading {
+    background-position: center;
+  }
+  .quiz {
+    box-align: center;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .header {
+    text-align: center;
+    padding-right: 42px;
+  }
+  .heading {
+    background-position: center;
+  }
+  .quiz {
+    box-align: center;
+  }
+  .mt30 {
+    margin-top: 30px;
+    margin-right: -21px;
+}
+  .container {
+    margin-left: 0px;
+    padding-left: 35px;
+  }
+  #contain {
+    margin-right: 8px;
+  }
+  .settings label {
+    margin-right: 40px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .header {
+    text-align: center;
+    padding-right: 31px;
+  }
+
+  .heading {
+    background-position: center;
+  }
+  .quiz {
+    box-align: center;
+  }
+
+  .mt30 {
+    margin-top: 30px;
+    margin-right: 179px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .header {
+    text-align: center;
+    padding-right: 31px;
+  }
+  .heading {
+    background-position: center;
+  }
+  .quiz {
+    box-align: center;
+  }
+  .slash {
+    margin-left: 18px;
+  }
+  .total {
+    margin-left: 33px;
+  }
+  .mt30 {
+    margin-top: 30px;
+    margin-right: -11px;
+  }
+  .settings {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 541px) {
+  .header {
+    text-align: center;
+    padding: 2%;
+  }
+  .heading {
+    background-position: center;
+  }
+  .quiz {
+    box-align: center;
+  }
+  .slash {
+    margin-left: 18px;
+  }
+  .total {
+    margin-left: 33px;
+  }
+  .mt30 {
+    margin-top: 30px;
+    margin-right: 208px;
+  }
+  .settings {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow: hidden;
+  }
+  .main {
+    padding-right: 16px;
+  }
+
+  .final {
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .header {
+    text-align: center;
+    padding-right: 27px;
+  }
+
+  #category {
+    margin-left: 0px;
+  }
+
+  h2{
+    font-size: 2.0rem;
+  }
+  .heading {
+    background-position: center;
+    padding: 0.2rem;
+  }
+  .quiz {
+    box-align: center;
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .mt30 {
+    margin-top: 15px;
+    margin-right: 164px;
+  }
+  .settings {
+    padding: 0px 35px 7px 35px;
+    max-width: 75%;
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .submit {
+    margin-bottom: 20px;
+  }
+
+}
+
+
+@media only screen 
+    and (device-width : 414px) 
+    and (device-height : 896px) 
+    and (-webkit-device-pixel-ratio : 2) { 
+      body {
+        overflow: hidden;
+      }
+      .main {
+        padding-right: 16px;
+      }
+    
+      .final {
+        box-shadow: 0px 0px 0px 0px;
+      }
+      .header {
+        text-align: center;
+        padding-right: 27px;
+      }
+    
+      #category {
+        margin-left: 0px;
+      }
+    
+      h2{
+        font-size: 2.0rem;
+      }
+      .heading {
+        background-position: center;
+        padding: 0.2rem;
+      }
+      .quiz {
+        box-align: center;
+        box-shadow: 0px 0px 0px 0px;
+      }
+      .mt30 {
+        margin-top: 15px;
+        margin-right: 188px;
+      }
+      .settings {
+        padding: 0px 35px 7px 35px;
+        max-width: 75%;
+        box-shadow: 0px 0px 0px 0px;
+      }
+      .submit {
+        margin-bottom: 20px;
+      }
+    }
+
+@media (max-width: 360px) {
+  body {
+    overflow: hidden;
+  }
+  .main {
+    padding-right: 16px;
+  }
+
+  .final {
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .header {
+    text-align: center;
+    padding-right: 27px;
+  }
+
+  #category {
+    margin-left: 0px;
+  }
+
+  h2{
+    font-size: 2.0rem;
+  }
+  .heading {
+    background-position: center;
+    padding: 0.2rem;
+  }
+  .quiz {
+    box-align: center;
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .mt30 {
+    margin-top: 15px;
+    margin-right: 115px;
+  }
+  .settings {
+    padding: 0px 35px 7px 35px;
+    max-width: 75%;
+    box-shadow: 0px 0px 0px 0px;
+  }
+
+}
+
+
